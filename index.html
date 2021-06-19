@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <canvas id="visualizer"></canvas>
+    <div class="amp">
+        <div class="logo-container">
+            <div class="logo">
+                Marshmallow
+            </div>
+        </div>
+        <div class="plate">
+            <div class="controls">
+                <div class="input-container">
+                    <label for="volume">VOLUME</label>
+                    <div class="knob-container">
+                        <input orient="vertical" type="range" min="0" max="1" value="0.5" step=".01" id="volume">
+                        <img src="img/knob.gif" class="control-volume" alt="" />    
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="distortion">GAIN</label>
+                    <div class="knob-container">
+                        <input orient="vertical" type="range" min=0 max=20 value="0" id="distortion">
+                        <img src="img/knob.gif" class="control-distortion" alt="" />    
+                    </div>
+                </div>
+                
+                 <div class="input-container">
+                    <label for="bass">BASS</label>
+                    <div class="knob-container">
+                        <input orient="vertical" type="range" min="-10" max="10" value="0" id="bass">
+                        <img src="img/knob.gif" class="control-bass" alt="" />    
+                    </div>
+                </div>
+                
+                 <div class="input-container">
+                    <label for="mid">MIDDLE</label>
+                    <div class="knob-container">
+                        <input orient="vertical" type="range" min="-10" max="10" value="0" id="mid">
+                        <img src="img/knob.gif" class="control-mid" alt="" />    
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <label for="treble">TREBLE</label>
+                    <div class="knob-container">
+                        <input orient="vertical" type="range" min="-10" max="10" value="0" id="treble">
+                        <img src="img/knob.gif" class="control-treble" alt="" />    
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="mute">MUTE</label>
+                        <button id="mute"></button>
+                        <div class="led"></button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>
