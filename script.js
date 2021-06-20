@@ -37,6 +37,22 @@ const analyserNode = new AnalyserNode(context, { fftSize: 1024 });
 
 let muted = false;
 
+function setRotation(id, multiplier, angleOffset = 0) {
+    function rotate(angle) {
+        const knob = $(`.control-${id}`);
+        knob.css("transform", "rotate(" + (angle - 150) + "deg)");
+    }
+    const input = $(`#${id}`)
+    const initialAngle = input.val() * multiplier + angleOffset;
+ 
+    rotate(initialAngle);
+
+    input.on("input", function () {
+        const newAngle = $(this).val() * multiplier + angleOffset;
+        rotate(newAngle);
+    });
+}
+
 function setupEventListeners() {
     window.addEventListener('resize', resize);
     volume.addEventListener('input', e => {
@@ -70,7 +86,6 @@ function setupEventListeners() {
     setRotation('bass', 15, 150);
     setRotation('mid', 15, 150);
     setRotation('treble', 15, 150);
-
 }
 
 function decodeImpulse(url, convolverNode) {
@@ -157,13 +172,6 @@ function makeOverdriveCurve( amount ) {
 function resize() {
     visualizer.width = visualizer.clientWidth * window.devicePixelRatio;
     visualizer.height = visualizer.clientHeight * window.devicePixelRatio;
-}
-
-function setRotation(id, multiplier, angleOffset = 0) {
-    $(`#${id}`).on("input", function () {
-        const angle = $(this).val() * multiplier + angleOffset;
-        $(`.control-${id}`).css("transform", "rotate(" + (angle - 150) + "deg)");
-    });
 }
 
 setupEventListeners();
