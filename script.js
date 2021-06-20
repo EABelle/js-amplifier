@@ -37,11 +37,6 @@ const analyserNode = new AnalyserNode(context, { fftSize: 1024 });
 
 let muted = false;
 
-setupEventListeners();
-setupContext();
-resize();
-drawVisualizer();
-
 function setupEventListeners() {
     window.addEventListener('resize', resize);
     volume.addEventListener('input', e => {
@@ -171,3 +166,7 @@ function setRotation(id, multiplier, angleOffset = 0) {
     });
 }
 
+setupEventListeners();
+setupContext();
+resize();
+drawVisualizer();
