@@ -83,6 +83,10 @@ input[type="range"] {
 	right: 0;
 	top: 0;
 	width: 1.8rem;
+    cursor: grab;
+}
+input[type="range"]:active {
+    cursor: grabbing;
 }
 img {
 	bottom: 0;
@@ -112,6 +116,7 @@ button {
     text-align: center;
     line-height: 79px;
     position: relative;
+    cursor: pointer;
 }
 
 button::after {
